@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+<t t-inherit="mail.Composer" t-inherit-mode="extension">
+    <xpath expr="//span[@t-if='!isSendButtonDisabled and !props.composer.message']" position="after">
+        <input
+            t-att-id="vendor_bill_admin_only_checkbox"
+            type="checkbox"
+            class="form-check-input"
+            t-att-checked="props.value"
+            t-on-change="onChange"
+        />
+        <label t-att-for="vendor_bill_admin_only_checkbox" class="form-check-label">
+            Internal Only
+        </label>
+    </xpath>
+</t>
+
+</templates>
